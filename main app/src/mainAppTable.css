@@ -1,0 +1,9 @@
+.main-table td{
+    border: 1px solid black;
+    padding: 0px;
+}
+
+.main-table td table{
+    width: 100%;
+}
+

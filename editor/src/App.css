@@ -1,0 +1,486 @@
+/*:root {*/
+/*    --col-width: 30ch;*/
+/*}*/
+
+
+*{
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;
+}
+
+.app table{
+    font-family: "Calibri";
+    font-size: 11pt;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 28px;
+}
+
+/*.app th{*/
+/*    border: 2px solid black;*/
+/*}*/
+
+.app th, .app td{
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/*.td-another-data{*/
+/*    border-top: none !important;*/
+/*}*/
+
+/*.td-title{*/
+/*    border-bottom: none !important;*/
+/*}*/
+.app table td{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.app table tr{
+    height: 8pt;
+}
+
+.lesson-number__input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    -moz-appearance: textfield;
+}
+
+.lesson-number__input::-webkit-outer-spin-button,
+.lesson-number__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.modal-container{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.lesson-editor{
+    width: 75vw;
+    height: 85vh;
+    border-radius: 16px;
+    background-color: white;
+    display: flex;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 32px 18px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 32px 18px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 32px 18px rgba(0, 0, 0, 0.2);
+    /*flex-direction: column;*/
+}
+
+.lesson-editor__left-side {
+    flex-basis: 25%;
+    height: 100%;
+    border-right: 1px solid #dee2e6;
+    /*background-color: blue;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-editor__main{
+    flex-basis: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4px 16px;
+    /*background-color: red;*/
+}
+
+.lesson-editor__main-form{
+    overflow: auto;
+}
+
+.lesson-editor__main-header{
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d7d7d7;
+    margin-bottom: 16px;
+}
+
+.lesson-input{
+    width: 80% !important;
+}
+
+.teacher-select{
+    width: 100% !important;
+}
+
+.lesson-editor__lesson-container{
+    /*flex-basis: 100px;*/
+    /*width: 100%;*/
+    /*padding: 8px 16px;*/
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #606369;
+    cursor: context-menu;
+}
+
+/*.lesson-editor__lesson-container:last-child{*/
+/*    border-bottom: none;*/
+/*}*/
+
+.lesson-editor__lesson-container-header{
+    padding: 4px 12px;
+    font-size: 14pt;
+    border-bottom: 1px dashed #919191;
+}
+
+.lesson-editor__add-lesson-container{
+    text-align: center;
+    font-size: 18px;
+    padding: 8px;
+    border-bottom: 1px solid #9ca2a9;
+    cursor: pointer;
+}
+
+.lesson-editor__add-lesson{
+    cursor: pointer;
+}
+.lesson-editor__lesson-item, .lesson-editor__add-lesson{
+    /*width: 100%;*/
+    padding: 8px 8px 8px 32px;
+    font-size: 13pt;
+}
+
+.lesson-editor__lesson-item_active{
+    background-color: #0d6efd;
+}
+
+.lesson-editor__lesson-item + .lesson-editor__lesson-item, .lesson-editor__lesson-item + .lesson-editor__add-lesson{
+    border-top: 1px solid #a1a6ab;
+}
+
+
+.input-with-suggestion{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input-with-suggestion__label{
+    display: flex;
+    flex-direction: column;
+    font-size: 14pt;
+}
+
+.input-with-suggestion__input{
+    /*width: 100%;*/
+    /*height: 16pt;*/
+    margin-top: 4px;
+    font-size: 14pt;
+    padding: 4px 8px;
+}
+
+.input-with-suggestion__suggestions-block{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 63px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    max-height: 374px;
+    overflow-y: scroll;
+    z-index: 11;
+    border: 1px solid #ced4da;
+    border-top: none;
+}
+
+.input-with-suggestion__suggestion-item{
+    font-size: 14pt;
+    padding: 4px 8px;
+    border-bottom: 1px solid #ced4da;
+    cursor: pointer;
+}
+
+.input-with-suggestion__suggestion-item:last-child{
+    border-bottom: none;
+}
+
+.input-with-suggestion__suggestion-item:hover{
+    background-color: #ececec;
+}
+
+
+.lesson-editor__position-editor{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.lesson-editor__week-parity-block, .lesson-editor__subgroups-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-editor__checkboxes{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.lesson-editor__checkboxes label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lesson-type-select{
+    width: 18%;
+    margin-left: 2%;
+}
+
+.lesson-editor__week-parity-block .title{
+    font-size: 14pt;
+}
+
+.lesson-editor__checkboxes label{
+    font-size: 18pt;
+}
+
+.lesson-editor__checkbox{
+    width: 20pt;
+    height: 20pt;
+}
+
+.lesson-editor__cell-preview{
+    height: 80px;
+    background-color: #ced4da;
+}
+
+.lesson-editor__main input{
+    border: 1px solid #ced4da;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+
+.context-menu{
+    width: 300px;
+    /*padding: 4px;*/
+    background-color: #ececec;
+    border-radius: 4px;
+    z-index: 125;
+    position: absolute;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.context-menu__list{
+    list-style: none;
+}
+
+.context-menu__item{
+    font-size: 14pt;
+    font-family: "Calibri";
+    padding: 4px 8px;
+    cursor: context-menu;
+}
+
+.context-menu__item:hover{
+    background-color: #d5d5d5;
+}
+
+.close_icon{
+    width: 32px;
+    height: 32px;
+    /*background-color: #0d6efd;*/
+    position: relative;
+    cursor: pointer;
+    transition: 0.1s all ease-in-out;
+}
+
+.close_icon:hover{
+    transform: scale(1.1);
+}
+
+.close_icon::before, .close_icon::after{
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    /*transform: ;*/
+}
+
+.close_icon::before{
+    transform: translateY(-50%) rotate(-45deg);
+
+}
+
+.close_icon::after{
+    transform: translateY(-50%) rotate(45deg);
+    /*transform: ;*/
+}
+
+hr.separation-line{
+    width: 95%;
+    margin: auto;
+    border: none;
+    height: 1px;
+    background-color: #6e6e6e;
+    margin-top: 24px;
+    margin-bottom: 20px;
+}
+
+.menu{
+    /*height: 24px;*/
+    font-size: 12pt;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+    border-bottom: 2px solid black;
+    width: 100%;
+    z-index: 5;
+    /*background-color: red;*/
+}
+
+.menu__list{
+    list-style-type: none;
+    display: flex;
+}
+
+.menu__item{
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: 0.1s all ease-in-out;
+}
+
+.menu__item:hover{
+    background-color: #0d6efd;
+}
+
+.menu__item a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu__item{
+    border-right: 1px solid black;
+}
+
+
+.week-range-calendar{
+    /*width: 250px;*/
+    /*height: 200px;*/
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    background-color: #0d6efd;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #0041a8;
+}
+
+.week-range-calendar__header{
+    /*width: 100%;*/
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid black;
+}
+
+.week-range-calendar__main{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.week-range-calendar__week{
+    /*width: 40px;*/
+    /*height: 40px;*/
+    display: flex;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    cursor: pointer;
+}
+
+.week-range-calendar__week-inner{
+    /*width: 40px;*/
+    /*height: 40px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.week-range-calendar__week-inner_default{
+    background-color: white;
+}
+.week-range-calendar__week-inner_active{
+    background-color: greenyellow;
+}
+.week-range-calendar__week-inner_disabled{
+    background-color: gray;
+}
+/*.week-range-calendar__week_disabled:hover{*/
+/*    !*background-color: gray;*!*/
+/*    box-shadow: none;*/
+/*}*/
+.week-range-calendar__week-inner_hovered{
+    background-color: cornflowerblue;
+}
+.week-range-calendar__week-inner_error{
+    background-color: red;
+}
+
+.week-range-calendar__week:hover .week-range-calendar__week-inner{
+    z-index: 1001;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.room-select{
+    /*width: 35%;*/
+}
+
+
+.teachers-departments{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+.teachers-departments__header label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14pt;
+}
+
+.teachers-departments__header input{
+    height: 20px;
+    width: 20px;
+}
+
+.department-select{
+    width: 100%;
+}

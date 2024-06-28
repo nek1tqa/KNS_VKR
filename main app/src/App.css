@@ -1,0 +1,102 @@
+.group-submodal__header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.group-submodal{
+}
+
+.group-submodal__body{
+  padding-left: 12px;
+}
+
+.group-submodal__header-buttons{
+  display: flex;
+  width: 70px;
+  justify-content: space-between;
+}
+
+.group-submodal__header-button{
+  /*height: 36px;*/
+  /*width: 36px;*/
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.group-submodal__header-button:hover{
+  transform: scale(1.1);
+}
+
+/*.group-submodal__header-button i{*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  display: flex;*/
+/*}*/
+
+
+
+
+
+.input-with-suggestion{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-with-suggestion__label{
+  display: flex;
+  flex-direction: column;
+  font-size: 14pt;
+}
+
+.input-with-suggestion__input{
+  /*width: 100%;*/
+  /*height: 16pt;*/
+  margin-top: 4px;
+  font-size: 14pt;
+  padding: 4px 8px;
+}
+
+.input-with-suggestion__suggestions-block{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 63px;
+  left: 0px;
+  width: 100%;
+  background-color: white;
+  max-height: 374px;
+  overflow-y: scroll;
+  z-index: 11;
+  border: 1px solid #ced4da;
+  border-top: none;
+}
+
+.input-with-suggestion__suggestion-item{
+  font-size: 14pt;
+  padding: 4px 8px;
+  border-bottom: 1px solid #ced4da;
+  cursor: pointer;
+}
+
+.input-with-suggestion__suggestion-item:last-child{
+  border-bottom: none;
+}
+
+.input-with-suggestion__suggestion-item:hover{
+  background-color: #ececec;
+}
+
+.faculty_department-select{
+  width: 100%;
+}
+
+.faculty_department-select .input-with-suggestion__label{
+  font-size: 16px;
+}
+
+.faculty_department-select .input-with-suggestion__input{
+  border-radius: 6px;
+  border: 1px solid rgb(206, 212, 218);
+}

@@ -1,0 +1,21 @@
+.left-side-nav{
+    margin: 0px;
+    padding: 0px;
+}
+
+.left-side-nav__item{
+    list-style-type: "none";
+    display: flex;
+}
+
+.left-side-nav__item a{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    width: 100%;
+}
+
+.left-side-nav__item a.active{
+    color: white;
+    background-color: var(--bs-link-color);;
+}
